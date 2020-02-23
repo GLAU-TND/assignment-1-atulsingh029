@@ -31,11 +31,11 @@ public class People {
     }
 
     public void setMultiNumber(String number) {
-        this.number = this.number+" "+number;
+        this.number = this.number+","+number;
     }
 
     public void setMultiEmail(String email) {
-        this.email = this.email+" "+email;
+        this.email = this.email+","+email;
     }
 
     public void setNumber(String number) {
