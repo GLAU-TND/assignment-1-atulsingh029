@@ -5,5 +5,5 @@ import contactlist.adt.People;
 public class Node {
         People data;
         Node next;
-        int size;
+        static int size;
     }
