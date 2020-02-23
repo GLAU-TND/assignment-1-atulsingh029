@@ -40,10 +40,7 @@ public class Main {
                     try{
                     int index=scan.nextInt();
                     operational.delete(storage,x[index-1]);}
-                    catch (InputMismatchException e){
-                        System.out.println("Invalid Input!");
-                    }
-                    catch (ArrayIndexOutOfBoundsException e){
+                    catch (InputMismatchException | ArrayIndexOutOfBoundsException e){
                         System.out.println("Invalid Input!");
                     }
 
