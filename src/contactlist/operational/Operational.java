@@ -2,6 +2,7 @@ package contactlist.operational;
 import contactlist.adt.People;
 import contactlist.storage.LinkedList;
 import contactlist.storage.Node;
+import contactlist.validation.Validate;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,12 +63,14 @@ public class Operational {
         people.setLastName(lName);
         System.out.print("Contact Number : ");
         String number=scan.next();
+        number=Validate.numberVal(number);
         people.setNumber(number);
         System.out.print("Would you like to add another contact number? (y/n) : ");
         String optionNumber =scan.next().trim();
         while(optionNumber.charAt(0)=='y'){
             System.out.print("Contact Number : ");
             String newContact=scan.next();
+            newContact=Validate.numberVal(newContact);
             people.setMultiNumber(newContact);
             System.out.print("Would you like to add another contact number? (y/n) : ");
             optionNumber =scan.next();
@@ -77,6 +80,7 @@ public class Operational {
         while(optionEmail.charAt(0)=='y') {
             System.out.print("Email Address : ");
             String newEmail = scan.next();
+            newEmail= Validate.emailVal(newEmail);
             people.setMultiEmail(newEmail);
             System.out.print("Would you like to add another email? (y/n) : ");
             optionEmail = scan.next();
