@@ -1,9 +1,7 @@
 package contactlist.operational;
 import contactlist.adt.People;
 import contactlist.storage.LinkedList;
-import contactlist.storage.Node;
 import contactlist.validation.Validate;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -48,6 +46,23 @@ public class Operational {
         Scanner scanner=new Scanner(System.in);
         storage.search(scanner.next());
 
+    }
+
+    public void deleteListView(LinkedList storage,String[] x){
+        System.out.println("Here are all your contacts");
+        System.out.println("-------- * -------- * -------- * --------");
+        for (int i = 0; i < x.length; i++) {
+            System.out.println((i+1)+". "+x[i]);
+        }
+        System.out.println("-------- * -------- * -------- * --------");
+        Scanner scan= new Scanner(System.in);
+        System.out.print("Enter the number against name to delete : ");
+        try{
+            int index=scan.nextInt();
+            delete(storage,x[index-1]);}
+        catch (InputMismatchException | ArrayIndexOutOfBoundsException e){
+            System.out.println("Invalid Input!");
+        }
     }
 
     private People input(){
