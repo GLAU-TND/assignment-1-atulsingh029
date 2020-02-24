@@ -6,6 +6,7 @@ public class Valdidate {
 
     public String emailVal(String input){
         String output="";
+        
         return output;
     }
 
