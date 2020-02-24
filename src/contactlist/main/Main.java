@@ -1,10 +1,6 @@
 package contactlist.main;
 import contactlist.operational.Operational;
 import contactlist.storage.LinkedList;
-
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         Operational operational=new Operational();
@@ -29,20 +25,7 @@ public class Main {
                     if(x==null){
                         input=operational.run();
                         break;}
-                    System.out.println("Here are all your contacts");
-                    System.out.println("-------- * -------- * -------- * --------");
-                    for (int i = 0; i < x.length; i++) {
-                        System.out.println((i+1)+". "+x[i]);
-                    }
-                    System.out.println("-------- * -------- * -------- * --------");
-                    Scanner scan= new Scanner(System.in);
-                    System.out.print("Enter the number against name to delete : ");
-                    try{
-                    int index=scan.nextInt();
-                    operational.delete(storage,x[index-1]);}
-                    catch (InputMismatchException | ArrayIndexOutOfBoundsException e){
-                        System.out.println("Invalid Input!");
-                    }
+                    operational.deleteListView(storage,x);
 
                     input=operational.run();
                     break;
