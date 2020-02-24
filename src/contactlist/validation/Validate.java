@@ -35,7 +35,7 @@ public class Validate {
             output=input;
         }
         else {
-            System.out.println("Invalid Contact Number!\nRetry : ");
+            System.out.print("Invalid Contact Number!\nRetry : ");
             Scanner scan = new Scanner(System.in);
             String newMobile=scan.next();
             String newResult=numberVal(newMobile);
